@@ -4,10 +4,12 @@ from games.arkanoid.communication import ( \
 )
 import pickle
 import numpy as np
+import os.path
 
 def ml_loop():
-	filename = 'C:\\Users\\user\\Desktop\\Day02教材 - revise\\Day02教材 - revise\\Day02教材\\04-磚塊怎麼打\\MLGame-master\\MLGame-master\\games\\arkanoid\\ml\\KNN_example.sav'
-	model= pickle.load(open(filename,'rb'))
+	filename = 'KNN_example.sav'
+	filepath = os.path.join(os.path.dirname(__file__),filename)
+	model= pickle.load(open(filepath,'rb'))
 	comm.ml_ready()
 
 	while True :
